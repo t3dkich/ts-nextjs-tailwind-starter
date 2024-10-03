@@ -6,9 +6,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        primary: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        'd-etf': {
+          blue: 'var(--color-d-etf-blue)',
+          bg: 'var(--color-d-etf-bg)',
+          text: 'var(--color-d-etf-text)',
+          subtext: 'var(--color-d-etf-subtext)',
+        },
         primary: {
           // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',

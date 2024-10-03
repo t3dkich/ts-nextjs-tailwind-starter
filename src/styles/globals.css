@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 :root {
   /* #region  /**=========== Primary Color =========== */
   /* !STARTERCONF Customize these variable, copy and paste from /styles/colors.css for list of colors */
@@ -26,12 +28,18 @@
   --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
   /* #endregion  /**======== Primary Color =========== */
+
+  /* D-ETF specific colors */
+  --color-d-etf-blue: #1137f6;
+  --color-d-etf-bg: #050b31;
+  --color-d-etf-text: #fafafa;
+  --color-d-etf-subtext: #dedfe2;
 }
 
 @layer base {
   /* inter var - latin */
   @font-face {
-    font-family: 'Inter';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 100 900;
     font-display: block;
@@ -115,4 +123,40 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
+
+  /* D-ETF specific utilities */
+  .text-shadow-d-etf {
+    text-shadow: 0px 4px 76px rgba(255, 255, 255, 0.24);
+  }
+}
+
+@layer components {
+  .button-slanted {
+    clip-path: polygon(90% 0, 100% 45%, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+/* D-ETF specific styles */
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-d-etf {
+  background-color: var(--color-d-etf-bg);
+}
+
+.text-d-etf {
+  color: var(--color-d-etf-text);
+}
+
+.text-d-etf-subtext {
+  color: var(--color-d-etf-subtext);
+}
+
+.text-d-etf-blue {
+  color: var(--color-d-etf-blue);
+}
+
+body {
+  @apply font-primary;
 }

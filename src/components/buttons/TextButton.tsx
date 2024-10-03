@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const TextButtonVariant = ['primary', 'basic'] as const;
 
 type TextButtonProps = {
-  variant?: (typeof TextButtonVariant)[number];
+  _variant?: (typeof TextButtonVariant)[number];
 } & React.ComponentPropsWithRef<'button'>;
 
 const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
@@ -13,7 +13,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
     {
       children,
       className,
-      variant = 'primary',
+      _variant = 'primary',
       disabled: buttonDisabled,
       ...rest
     },
@@ -25,20 +25,8 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
         type='button'
         disabled={buttonDisabled}
         className={cn(
-          'button inline-flex items-center justify-center font-semibold',
-          'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring',
-          'transition duration-100',
-          //#region  //*=========== Variant ===========
-          variant === 'primary' && [
-            'text-primary-500 hover:text-primary-600 active:text-primary-700',
-            'disabled:text-primary-200',
-          ],
-          variant === 'basic' && [
-            'text-black hover:text-gray-600 active:text-gray-800',
-            'disabled:text-gray-300',
-          ],
-          //#endregion  //*======== Variant ===========
-          'disabled:cursor-not-allowed disabled:brightness-105 disabled:hover:underline',
+          'relative bg-blue-600 text-white text-xl font-semibold py-3 px-6 w-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 button-slanted',
+          'rounded-md', // Ensure the button has rounded corners
           className
         )}
         {...rest}
